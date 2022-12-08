@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/products/products.module').then((m) => m.ProductsModule),
   },
-  { path: '', redirectTo: `products`, pathMatch: `full` },
+  { path: "", redirectTo: `products`, pathMatch: `full` },
 ];
 
 @NgModule({

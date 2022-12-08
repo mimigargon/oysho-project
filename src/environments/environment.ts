@@ -4,7 +4,8 @@
 
 export const environment = {
     production: false,
-    baseUrl: "https://www.oysho.com/itxrest/2/catalog/store/64009600/60361120/category/1010601166/product"
+    baseUrl: "https://www.oysho.com/itxrest/2/catalog/store/64009600/60361120",
+    imageBaseUrl: "https://static.oysho.net/6/photos2",
   };
   
   /*

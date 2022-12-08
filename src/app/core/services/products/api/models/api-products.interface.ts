@@ -1,9 +1,77 @@
+export interface ApiCategories {
+    categories: ApiCategoriesElement[];
+}
+
+export interface ApiCategoriesElement {
+    id: number,
+    name: string,
+    nameEn: string,
+    shortDescription: null,
+    description: null,
+    keywords: null,
+    key: string,
+    numberOfProducts: number,
+    type: string,
+    viewCategoryId: number,
+    subcategories: ApiCategoriesSubcategories[],
+    attachments: ApiCategoriesAttachments[],
+    sequence: number,
+    oldsIds: number[],
+}
+
+export interface ApiCategoriesSubcategories {
+    id: number,
+    name: string,
+    nameEn: string,
+    shortDescription: null,
+    description: null,
+    keywords: null,
+    key: string,
+    numberOfProducts: number,
+    type: string,
+    viewCategoryId: number,
+    subcategories: ApiCategoriesSubcategories[],
+    attachments: ApiCategoriesAttachments[],
+    sequence: number,
+    oldsIds: number[],
+}
+
+export interface ApiCategoriesAttachments {
+    id: string,
+    name: string,
+    path: string,
+    type: string
+}
+
+export interface ApiList {
+    gridElements: GridElements[],
+    products: ApiProducts[],
+    rueiData: RueiData[]
+}
+
+export interface GridElements {
+    id: string,
+    template: string,
+    ccIds: number[],
+    type: string,
+    hiddenFields: unknown
+
+}
+
+export interface RueiData {
+    StoreLangRUEI: string,
+    StoreTypeRUEI: string,
+    OperationTypeRUEI: string,
+    OperationRUEI: string,
+    StoreIdRUEI: string
+}
+
 export interface ApiProducts {
     id: number,
     type: string,
     name: string,
     nameEn: string,
-    image: null,
+    image: unknown,
     isBuyable: boolean,
     onSpecial: boolean,
     backSoon: null,
@@ -11,7 +79,7 @@ export interface ApiProducts {
     isTop: number,
     sizeSystem: string,
     subFamily: string,
-    productType: String,
+    productType: string,
     bundleColors: ApiBundleColors,
     tags: unknown,
     attributes: ApiAttributes,
@@ -53,7 +121,7 @@ export interface ApiBundleProductsSummaries {
     type: string,
     name: string,
     nameEn: string,
-    image: null,
+    image: unknown,
     isBuyable: boolean,
     onSpecial: boolean,
     backSoon: null,
@@ -198,7 +266,7 @@ export interface ApiJoinLifeInfo {
 
 export interface ApiRelatedProducts {
     id: number,
-    image: null,
+    image: unknown,
     name: string,
     nameEN: string,
     isBuyable: boolean,
