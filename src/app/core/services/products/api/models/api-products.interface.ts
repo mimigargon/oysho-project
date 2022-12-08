@@ -85,7 +85,7 @@ export interface ApiProducts {
     attributes: ApiAttributes,
     relatedCategories: ApiRelatedCategories,
     attachments: unknown,
-    bundleProductSummaries: ApiBundleProductsSummaries,
+    bundleProductSummaries: ApiBundleProductsSummaries[],
     detail: ApiDetail,
 }
 
@@ -167,7 +167,7 @@ export interface ApiDetail {
     composition: unknown,
     compositionByZone: unknown,
     care: unknown,
-    colors: ApiColors,
+    colors: ApiColors[],
     relatedProducts: ApiRelatedProducts,
     xmediaDefaultSet: null,
     xmedia: ApiXMedia,
@@ -186,7 +186,7 @@ export interface ApiColors {
     modelName: null,
     modelSize: null,
     image: ApiColorsImage,
-    sizes: ApiColorSizes,
+    sizes: ApiColorSizes[],
     isContinuity: boolean,
     joinLifeInfo: ApiJoinLifeInfo,
     compositionDetail: null,
@@ -277,7 +277,7 @@ export interface ApiRelatedProducts {
     relatedCategories: ApiRelatedCategories
     detail: ApiDetailOfRelatedProducts,
     bundleProductSummaries: ApiBundleProductsSummaries,
-    colors: ApiColors,
+    colors: ApiColors[],
     family: string,
     subFamily: string,
     productUrl: string,
