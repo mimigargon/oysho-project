@@ -75,4 +75,17 @@ export class ProductsService {
     return Number((number / 100). toFixed(2)).toString();
   }
 
+  getProductDetails(categoryId: string, productId: string): Observable<Products> {
+    return this.ApiProductsService.getDetails(categoryId, productId).pipe(
+      map((ApiProducts) => ({
+        id: ApiProducts.id,
+        name: ApiProducts.name,
+        nameEn: ApiProducts.nameEn,
+        image: this.getProductImages(ApiProducts),
+        longDescription: ApiProducts.bundleProductSummaries[0]?.detail?.longDescription,
+        price: this.getPrices(ApiProducts),
+      }))
+    )
+  }
+
 }

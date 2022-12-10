@@ -1,0 +1,8 @@
+&__header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.308); 
+    @import "../app/core/header/header.component.scss";
+
+}

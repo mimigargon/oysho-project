@@ -1,0 +1,33 @@
+&__container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.308); 
+    padding: 0;
+
+    &__menu-container {
+        padding-right: 32px;
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 16px;
+        &__menu {
+            width: 10%;
+        }
+    }
+    &__logo-container {
+        &__logo {
+            width: 30%;
+            margin-left: -80%;
+        }
+    }
+    &__searchbox-container {
+        display: flex;
+      &__search-icon {
+            width: 5%;
+        }
+        &__searchbox {
+
+        }
+    }
+}
