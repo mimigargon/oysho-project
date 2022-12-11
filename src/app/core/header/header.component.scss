@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
 &__container {
     display: flex;
@@ -7,7 +7,7 @@
     flex: 1 1 auto;
     justify-content: space-between;
     background-color: rgba(221, 221, 221, 0.192);
-    padding: 0;
+    padding: 1%;
 
     &__menu-container {
         padding-right: 32px;
@@ -27,26 +27,6 @@
 
             &__menu-img {
                 width: 10%;
-            }
-        }
-
-        &__category-menu {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            &--sidebar {
-                font-family: 'Roboto Condensed', sans-serif;
-                display: flex;
-                flex-direction: column;
-                margin: 30px 0px 0px 10px;
-                font-weight: 400;
-                font-size: 20px;
-                line-height: 10px;
-                letter-spacing: -.2px;
-                text-transform: uppercase;
-                cursor: pointer;
-                z-index: 9999999;
             }
         }
     }
@@ -77,15 +57,13 @@
             border: 0;
 
             &__search-icon {
-                width: 5%;
+                width: 3%;
             }
-
         }
-
 
         &__searchbox {
             font-size: 14px;
-            padding: 7px 0;
+            padding: 0px 0;
             height: 100%;
             margin: 0;
             border: 0 none;
@@ -94,6 +72,36 @@
             text-overflow: ellipsis;
             position: absolute;
             left: 50px;
+        }
+    }
+}
+
+&__categories-container {
+    &__frame {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &--sidebar {
+            font-family: "Roboto Condensed", sans-serif;
+            display: flex;
+            flex-direction: column;
+            margin: 30px 0px 0px 10px;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 10px;
+            letter-spacing: -0.2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            z-index: 9999999;
+        }
+
+        &__categories {
+            list-style-type: none;
+
+            &__category {
+                text-transform: uppercase;
+            }
         }
     }
 }

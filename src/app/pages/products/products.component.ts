@@ -12,14 +12,14 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 export class ProductsComponent implements OnInit {
   public productList?: Products[];
   public categoriesID?: CategoriesElements[];
-  constructor(private productsService: ProductsService) {}
+  constructor(private ProductsService: ProductsService) {}
 
   ngOnInit(): void {
     this.getCategory()
   }
 
   getCategory(){
-    this.productsService.getCategories().subscribe({
+    this.ProductsService.getCategories().subscribe({
       next: (result) =>  {
         this.categoriesID = result;
         for(let id of this.categoriesID){
@@ -32,7 +32,7 @@ export class ProductsComponent implements OnInit {
   }
 
   getProductsList(id: string) {
-    this.productsService.getProductsList(id).subscribe({
+    this.ProductsService.getProductsList(id).subscribe({
       next: (result) => {
         this.productList = result;
       },

@@ -1,1 +1,8 @@
-<p>home works!</p>
+<h1 class="page__app__title">ÚLTIMA SEMANA</h1>
+<div class="page__app__home-container">
+    <div class="page__app__home-container__products" *ngFor="let product of lastWeekCategory">
+        <img class="page__app__home-container__products__image" [src]="product.image" alt="product.name" routerLink="products/{{product.id}}">
+        <p class="page__app__home-container__products__name">{{product.name}}</p>
+        <p class="page__app__home-container__products__price">{{product.price[0]}}€</p>
+    </div>
+</div>

@@ -1,6 +1,27 @@
+<div class="page__app__products-header-frame">
+<div class="page__app__products-header-frame__header">
+    <a class="page__app__products-header-frame__header__arrow-back-link" routerLink="/home">
+        <img
+        class="page__app__products-header-frame__header__arrow-back-link__icon"
+        src="../../../assets/images/arrow-back-icon.svg"
+        alt="arrow-back-icon.svg"
+        />
+    </a>
+    <h1 class="page__app__products-header-frame__header__title">
+      Los productos de la colección
+    </h1>
+</div>
+</div>
+
 <div class="page__app__product-container">
-    <div *ngFor="let product of productList">
-        <p>{{product.name}}</p>
-        <img [src]="product.image" alt="product.name" routerLink="products/{{product.id}}">
-    </div>
+  <div class="page__app__product-container__products" *ngFor="let product of productList">
+    <img
+      class="page__app__product-container__products__image"
+      [src]="product.image"
+      alt="product.name"
+      routerLink="/products/{{ product.id }}"
+    />
+    <p class="page__app__product-container__products__name">{{ product.name }}</p>
+    <p class="page__app__product-container__products__price">{{ product.price[0] }}€</p>
+  </div>
 </div>

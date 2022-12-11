@@ -16,7 +16,7 @@ export class ProductsService {
   constructor(private ApiProductsService: ApiProductsService) { }
 
   getCategories(): Observable<CategoriesElements[]> {
-    return this.ApiProductsService.getCategory().pipe(
+    return this.ApiProductsService.getCategories().pipe(
       map((ApiCategories) => {
         return ApiCategories.categories.map((category) => ({
           id: category.id,

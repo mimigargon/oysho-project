@@ -1,26 +1,24 @@
 <div class="page__app__header__container">
   <div class="page__app__header__container__menu-container">
-    <button class="page__app__header__container__menu-container__menu">
+    <button
+      class="page__app__header__container__menu-container__menu"
+      (mouseover)="showCategories = true"
+    >
       <img
         class="page__app__header__container__menu-container__menu__menu-img"
         src="../../../assets/images/menu-icon.svg"
         alt="menu-icon.svg"
       />
     </button>
-    <div class="page__app__header__container__menu-container__category-menu--sidebar">
-        <ul class="page__app__header__container__menu-container__category-menu__categories" *ngFor="let category of allCategories">
-            <li class="page__app__header__container__menu-container__category-menu__categories__category" routerLink="category/{{category.id}}">{{category.name}}</li>
-        </ul>
-    </div>
   </div>
   <div class="page__app__header__container__logo-container">
     <a routerLink="/home">
-    <img
-      class="page__app__header__container__logo-container__logo"
-      src="../../../assets/images/Oysho_logo.png"
-      alt="oysho-logo.png"
-    />
-</a>
+      <img
+        class="page__app__header__container__logo-container__logo"
+        src="../../../assets/images/Oysho_logo.png"
+        alt="oysho-logo.png"
+      />
+    </a>
   </div>
   <div class="page__app__header__container__searchbox-container">
     <button
@@ -38,4 +36,23 @@
       placeholder="Buscar productos..."
     />
   </div>
+</div>
+
+<div class="page__app__header__categories-container" (mouseover)="showCategories = true" (mouseleave)="showCategories = false">
+<div
+class="page__app__header__categories-container__frame--sidebar"
+*ngIf="showCategories"
+>
+<ul
+  class="page__app__header__categories-container__frame__categories"
+  *ngFor="let category of allCategories"
+>
+  <li
+    class="page__app__header__categories-container__frame__categories__category"
+    routerLink="category/{{ category.id }}"
+  >
+    {{ category.name }}
+  </li>
+</ul>
+</div>
 </div>

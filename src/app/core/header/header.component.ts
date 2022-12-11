@@ -11,7 +11,8 @@ import { ProductsService } from '../services/products/products.service';
 })
 export class HeaderComponent implements OnInit {
   allCategories?: CategoriesElements[]
-  constructor(private ProductsService: ProductsService, private route: ActivatedRoute, private router: Router) {}
+  showCategories: boolean = false;
+  constructor(private ProductsService: ProductsService) {}
 
 
   ngOnInit(): void {

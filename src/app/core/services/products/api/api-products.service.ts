@@ -12,7 +12,7 @@ export class ApiProductsService  {
 
   constructor(private http: HttpClient) { }
 
-  getCategory(): Observable<ApiCategories> {
+  getCategories(): Observable<ApiCategories> {
     return this.http.get<ApiCategories>(`${environment.baseUrl}/category`);
   }
 
