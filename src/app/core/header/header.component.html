@@ -1,15 +1,41 @@
 <div class="page__app__header__container">
-    <div class="page__app__header__container__menu-container">
-        <button class="page__app__header__container__menu-container__menu">
-            <img class="page__app__header__container__menu-container__menu-img" src="../../../assets/images/menu-icon.svg" alt="menu-icon.svg">
-            <span class="page__app__header__container__menu-container__hamburguer-menu"></span>
-        </button>
+  <div class="page__app__header__container__menu-container">
+    <button class="page__app__header__container__menu-container__menu">
+      <img
+        class="page__app__header__container__menu-container__menu__menu-img"
+        src="../../../assets/images/menu-icon.svg"
+        alt="menu-icon.svg"
+      />
+    </button>
+    <div class="page__app__header__container__menu-container__category-menu--sidebar">
+        <ul class="page__app__header__container__menu-container__category-menu__categories" *ngFor="let category of allCategories">
+            <li class="page__app__header__container__menu-container__category-menu__categories__category" routerLink="category/{{category.id}}">{{category.name}}</li>
+        </ul>
     </div>
-    <div class="page__app__header__container__logo-container">
-        <img class="page__app__header__container__logo-container__logo" src="../../../assets/images/Oysho_logo.png" alt="oysho-logo.png">
-    </div>
-    <div class="page__app__header__container__searchbox-container">
-        <img class="page__app__header__container__searchbox-container__search-icon" src="../../../assets/images/search-icon.svg" alt="search-icon.svg">
-        <input class="page__header__container__searchbox-container__searchbox" type="text" placeholder="Buscar productos...">
-    </div>
+  </div>
+  <div class="page__app__header__container__logo-container">
+    <a routerLink="/home">
+    <img
+      class="page__app__header__container__logo-container__logo"
+      src="../../../assets/images/Oysho_logo.png"
+      alt="oysho-logo.png"
+    />
+</a>
+  </div>
+  <div class="page__app__header__container__searchbox-container">
+    <button
+      class="page__app__header__container__searchbox-container__button-search"
+    >
+      <img
+        class="page__app__header__container__searchbox-container__button-search__search-icon"
+        src="../../../assets/images/search-icon.svg"
+        alt="search-icon.svg"
+      />
+    </button>
+    <input
+      class="page__app__header__container__searchbox-container__searchbox"
+      type="text"
+      placeholder="Buscar productos..."
+    />
+  </div>
 </div>

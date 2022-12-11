@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categories, CategoriesElements } from '../services/products/models/products.interface';
 import { ProductsService } from '../services/products/products.service';
@@ -14,13 +15,14 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
+    this.getAllCategories()
   }
 
   getAllCategories() {
     this.ProductsService.getCategories().subscribe({
       next: (result) => {
         this.allCategories = result;
+        console.log(this.allCategories)
       },
       error: (error) => {
         console.error(error)

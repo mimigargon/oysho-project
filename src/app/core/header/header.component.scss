@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
 &__container {
     display: flex;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.308); 
+    flex-direction: row;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    background-color: rgba(221, 221, 221, 0.192);
     padding: 0;
 
     &__menu-container {
@@ -11,23 +16,84 @@
         align-items: center;
         justify-content: flex-start;
         padding: 0 16px;
+
         &__menu {
-            width: 10%;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            &__menu-img {
+                width: 10%;
+            }
+        }
+
+        &__category-menu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &--sidebar {
+                font-family: 'Roboto Condensed', sans-serif;
+                display: flex;
+                flex-direction: column;
+                margin: 30px 0px 0px 10px;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 10px;
+                letter-spacing: -.2px;
+                text-transform: uppercase;
+                cursor: pointer;
+                z-index: 9999999;
+            }
         }
     }
+
     &__logo-container {
         &__logo {
             width: 30%;
-            margin-left: -80%;
+            display: flex;
+            align-items: center;
         }
     }
+
     &__searchbox-container {
         display: flex;
-      &__search-icon {
-            width: 5%;
-        }
-        &__searchbox {
+        position: relative;
+        flex: 1 1 auto;
+        justify-content: center;
+        align-items: center;
 
+        &__button-search {
+            display: flex;
+            flex: 1 1 auto;
+            border-radius: 20px;
+            padding: 0 17px;
+            height: 40px;
+            align-items: center;
+            background-color: #fff;
+            border: 0;
+
+            &__search-icon {
+                width: 5%;
+            }
+
+        }
+
+
+        &__searchbox {
+            font-size: 14px;
+            padding: 7px 0;
+            height: 100%;
+            margin: 0;
+            border: 0 none;
+            font-weight: 400;
+            width: calc(100% - 67px);
+            text-overflow: ellipsis;
+            position: absolute;
+            left: 50px;
         }
     }
 }

@@ -1,6 +1,6 @@
-<div class="page__product-container">
+<div class="page__app__product-container">
     <div *ngFor="let product of productList">
         <p>{{product.name}}</p>
-        <img [src]="product.image" alt="product.name">
+        <img [src]="product.image" alt="product.name" routerLink="products/{{product.id}}">
     </div>
 </div>
