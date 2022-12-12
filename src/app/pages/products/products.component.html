@@ -15,13 +15,19 @@
 
 <div class="page__app__product-container">
   <div class="page__app__product-container__products" *ngFor="let product of productList">
+    
+    <div *ngFor="let image of product.image">
     <img
       class="page__app__product-container__products__image"
-      [src]="product.image"
+      [src]="image"
       alt="product.name"
       routerLink="/product/{{this.categoriesID}}/{{product.id}}/detail"
     />
+  </div>
     <p class="page__app__product-container__products__name">{{ product.name }}</p>
     <p class="page__app__product-container__products__price">{{ product.price[0] }}€</p>
+    <div *ngFor="let color of product.color">
+      <img [src]="color">
+    </div>
   </div>
 </div>

@@ -2,56 +2,56 @@
     <div class="page__app__footer__footer-container__row">
         <div class="page__app__footer__footer-container__row__help">
             <h5>Ayuda</h5>
-            <ul class="page__app__footer__footer-container__row__help__list">
-                <li><a href="https://www.oysho.com/es/contact.html">Contacto</a></li>
-                <li><a href="https://www.oysho.com/es/att-client.html">Guía de compra</a></li>
-                <li><a href="https://www.oysho.com/es/page/landing_guiatallas.html">Guía de tallas</a></li>
-                <li><a href="https://www.oysho.com/es/page/landing_envios.html">Envíos y devoluciones</a></li>
-                <li><a href="https://www.oysho.com/es/gift-card/home.html">Tarjeta regalo</a></li>
-                <li><a href="https://www.oysho.com/integration/mectitofa/web/ticket?brand=OY&locale=es&market=ES">Solicitar
+            <ul class="page__app__footer__footer-container__row__help__list" *ngFor="let link of allLinks">
+                <li><a [href]="link.help.contact">Contacto</a></li>
+                <li><a [href]="link.help.client">Guía de compra</a></li>
+                <li><a [href]="link.help.sizes">Guía de tallas</a></li>
+                <li><a [href]="link.help.shipping">Envíos y devoluciones</a></li>
+                <li><a [href]="link.help.giftCard">Tarjeta regalo</a></li>
+                <li><a [href]="link.help.ticket">Solicitar
                         factura</a></li>
             </ul>
         </div>
 
         <div class="page__app__footer__footer-container__row__enterprise">
             <h5>Empresa</h5>
-            <ul class="page__app__footer__footer-container__row__enterprise__footer-links">
-                <li><a href="https://www.oysho.com/es/store-locator.html">Tiendas</a></li>
-                <li><a href="https://www.oysho.com/es/page/company.html">Sobre nosotros</a></li>
-                <li><a href="https://www.oysho.com/es/page/press.html">Prensa</a></li>
-                <li><a href="https://www.oysho.com/es/page/policies.html">Políticas</a></li>
+            <ul class="page__app__footer__footer-container__row__enterprise__footer-links" *ngFor="let link of allLinks">
+                <li><a [href]="link.enterprise.stores">Tiendas</a></li>
+                <li><a [href]="link.enterprise.company">Sobre nosotros</a></li>
+                <li><a [href]="link.enterprise.press">Prensa</a></li>
+                <li><a [href]="link.enterprise.policies">Políticas</a></li>
                 <li><a
-                        href="https://static.oysho.net/6/static2/legal/cookiespolicy/CookiesPolicy_es.pdf?t=20221107015740">Política
+                        [href]="link.enterprise.cookies">Política
                         de cookies</a></li>
                 <li><a
-                        href="https://static.oysho.net/6/static2/legal/cookiespolicy/CookiesPolicy_es.pdf?t=20221107015740">Configuración
+                        [href]="link.enterprise.cookiesSettings">Configuración
                         de cookies</a></li>
                 <li><a
-                        href="https://static.oysho.net/6/static2/legal/PrivacyPolicy/PrivPolicy_OY_ES_es.pdf?t=20221107015740">Política
+                        [href]="link.enterprise.privacy">Política
                         de privacidad</a></li>
             </ul>
         </div>
 
         <div class="page__app__footer__footer-container__row__links">
             <h5>Síguenos</h5>
-            <ul class="page__app__footer__footer-container__row__links__footer-links">
-                <li><a href="https://www.facebook.com/oysho">Facebook</a></li>
-                <li><a href="https://instagram.com/oysho">Instagram</a></li>
-                <li><a href="https://www.youtube.com/c/oysho">Youtube</a></li>
+            <ul class="page__app__footer__footer-container__row__links__footer-links" *ngFor="let link of allLinks">
+                <li><a [href]="link.social.facebook">Facebook</a></li>
+                <li><a [href]="link.social.instagram">Instagram</a></li>
+                <li><a [href]="link.social.youtube">Youtube</a></li>
             </ul>
         </div>
 
-        <div class="page__app__footer__footer-container__row__qr">
+        <div class="page__app__footer__footer-container__row__qr" *ngFor="let link of allLinks">
             <h5>Descarga nuestra app</h5>
-            <img src="https://static.oysho.net/6/cms/assets/uploads/qrDownload_1.png?imwidth=200&ts=20221129021707"
+            <img [src]="link.qr.src"
                 alt="código qr de Oysho" />
         </div>
     </div>
     <hr>
     <div class="page__app__footer__footer-container__social">
-        <div class="page__app__footer__footer-container__social__copyright">
+        <div class="page__app__footer__footer-container__social__copyright" *ngFor="let link of allLinks">
             <p>Copyright &copy; 2022 All Rights Reserved by
-                <a href="https://github.com/mimigargon">Mireia</a>.
+                <a [href]="link.social.github">Mireia</a>.
             </p>
         </div>
     </div>

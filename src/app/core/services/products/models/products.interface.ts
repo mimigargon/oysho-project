@@ -16,6 +16,7 @@ export interface Products {
     image: string[],
     longDescription: string,
     price: string[];
+    color: string[];
 }
 
 export interface ProductDetails {
@@ -25,6 +26,7 @@ export interface ProductDetails {
     image: string[],
     longDescription: string,
     price: string[];
+    color: string [];
 }
 
 export const enum ImageSize {
