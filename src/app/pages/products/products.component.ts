@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap } from 'rxjs';
 import { CategoriesElements, Products } from 'src/app/core/services/products/models/products.interface';
 import { ProductsService } from 'src/app/core/services/products/products.service';
@@ -11,24 +12,20 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 })
 export class ProductsComponent implements OnInit {
   public productList?: Products[];
-  public categoriesID?: CategoriesElements[];
-  constructor(private ProductsService: ProductsService) {}
+  public categoriesID?: string | null;
+  constructor(private ProductsService: ProductsService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.getCategory()
-  }
-
-  getCategory(){
-    this.ProductsService.getCategories().subscribe({
-      next: (result) =>  {
-        this.categoriesID = result;
-        for(let id of this.categoriesID){
-          let categoryId = id.id
-          let categoryIdString = categoryId.toString();
-          this.getProductsList(categoryIdString)
-        }
+    this.route.paramMap.subscribe((params) => {
+      this.categoriesID = params.get('categoryId');
+      if(this.categoriesID) {
+        this.getProductsList(this.categoriesID)
       }
     })
+  }
+
+  public goToProductsDetails = (product: Products) => {
+    this.router.navigate(['products', this.categoriesID, 'detail', product.id.toString()])
   }
 
   getProductsList(id: string) {

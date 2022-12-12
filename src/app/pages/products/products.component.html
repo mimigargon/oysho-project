@@ -19,7 +19,7 @@
       class="page__app__product-container__products__image"
       [src]="product.image"
       alt="product.name"
-      routerLink="/products/{{ product.id }}"
+      (click)="goToProductsDetails(product)"
     />
     <p class="page__app__product-container__products__name">{{ product.name }}</p>
     <p class="page__app__product-container__products__price">{{ product.price[0] }}€</p>
