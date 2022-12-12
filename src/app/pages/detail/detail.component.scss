@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+&__detail-container {
+    display: flex;
+    align-items: center;
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title {
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        &__image {
+            width: 50%;
+        }
+
+        &__description,
+        &__price {
+            font-family: "Roboto Condensed", sans-serif;
+            text-align: center;
+        }
+    }
+}

@@ -21,6 +21,6 @@ export class ApiProductsService  {
   }
 
   getDetails(categoryId: string, productId: string): Observable<ApiProducts> {
-    return this.http.get<ApiProducts>(`${environment.baseUrl}/cateogry/${categoryId}/product/${productId}/detail`)
+    return this.http.get<ApiProducts>(`${environment.baseUrl}/category/${categoryId}/product/${productId}/detail`)
   }
 }

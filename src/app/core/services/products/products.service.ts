@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiProductsService } from './api/api-products.service';
 import { ApiCategories, ApiList, ApiProducts } from './api/models/api-products.interface';
-import { Products, CategoriesElements, ImageKind, ImageSize, ImageUrlOptions } from './models/products.interface';
+import { Products, CategoriesElements, ImageKind, ImageSize, ImageUrlOptions, ProductDetails } from './models/products.interface';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -75,7 +75,7 @@ export class ProductsService {
     return Number((number / 100). toFixed(2)).toString();
   }
 
-  getProductDetails(categoryId: string, productId: string): Observable<Products> {
+  getProductDetails(categoryId: string, productId: string): Observable<ProductDetails> {
     return this.ApiProductsService.getDetails(categoryId, productId).pipe(
       map((ApiProducts) => ({
         id: ApiProducts.id,

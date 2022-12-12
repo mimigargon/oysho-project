@@ -1,4 +1,4 @@
-import { CategoriesElements, Products } from './../../core/services/products/models/products.interface';
+import { ProductDetails } from './../../core/services/products/models/products.interface';
 import { ProductsService } from './../../core/services/products/products.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class DetailComponent implements OnInit{
   categoryId?: string | null;
   productId?: string | null;
-  productDetails?: Products;
+  productDetails!: ProductDetails;
 constructor(private router: Router, private route: ActivatedRoute, private ProductsService: ProductsService) {
   this.categoryId = this.route.snapshot.paramMap.get('categoryId');
   this.productId = this.route.snapshot.paramMap.get('productId')

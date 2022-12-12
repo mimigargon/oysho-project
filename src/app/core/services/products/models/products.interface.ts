@@ -18,6 +18,15 @@ export interface Products {
     price: string[];
 }
 
+export interface ProductDetails {
+    id: number,
+    name: string,
+    nameEn: string,
+    image: string[],
+    longDescription: string,
+    price: string[];
+}
+
 export const enum ImageSize {
     fullSize = 1,
     extraLarge = 2,

@@ -4,9 +4,12 @@ import { ProductsComponent } from './products.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':categoryId',
     component: ProductsComponent,
   },
+  {
+    path: `:categoryId/detail`, loadChildren: () => import('../detail/details.module').then((m) => m.DetailsModule)
+  }
 ];
 
 @NgModule({
