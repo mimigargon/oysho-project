@@ -4,7 +4,7 @@ import { DetailComponent } from './detail.component';
 
 const routes: Routes = [
   {
-    path: ':productId',
+    path: '',
     component: DetailComponent,
   },
 ];

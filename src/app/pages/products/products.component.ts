@@ -24,10 +24,6 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  public goToProductsDetails = (product: Products) => {
-    this.router.navigate(['products', this.categoriesID, 'detail', product.id.toString()])
-  }
-
   getProductsList(id: string) {
     this.ProductsService.getProductsList(id).subscribe({
       next: (result) => {
