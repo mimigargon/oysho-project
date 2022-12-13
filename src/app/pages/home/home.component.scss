@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
-&__title {
+.home-title {
     font-family: "Roboto Condensed", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-&__home-container {
+.home-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);

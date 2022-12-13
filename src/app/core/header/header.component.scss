@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
 
-&__container {
+.header-container {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -76,7 +76,7 @@
     }
 }
 
-&__categories-container {
+.categories-container {
     max-height: 400px;
     max-width: 300px;
     overflow: hidden scroll;

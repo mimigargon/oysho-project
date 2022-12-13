@@ -1,18 +1,19 @@
-&__header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    @import "../app/core/header/header.component.scss";
-
-}
-
-&__footer {
-    display: flex;
-    width: 100%;
-    background-color: rgba(128, 128, 128, 0.308); 
-    @import "../app/core/footer/footer.component.scss";
-}
-
 @import "../app/pages/home/home.component.scss";
 @import "../app/pages/products/products.component.scss";
 @import "../app/pages/detail/detail.component.scss";
+
+.app {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @import "../app/core/header/header.component.scss";
+    }
+
+    &__footer {
+        display: flex;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.308);
+        @import "../app/core/footer/footer.component.scss";
+    }
+}

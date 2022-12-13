@@ -1,8 +1,8 @@
-<div class="page__app__footer__footer-container">
-    <div class="page__app__footer__footer-container__row">
-        <div class="page__app__footer__footer-container__row__help">
+<div class="footer-container">
+    <div class="footer-container__row">
+        <div class="footer-container__row__help">
             <h5>Ayuda</h5>
-            <ul class="page__app__footer__footer-container__row__help__list" *ngFor="let link of allLinks">
+            <ul class="footer-container__row__help__list" *ngFor="let link of allLinks">
                 <li><a [href]="link.help.contact">Contacto</a></li>
                 <li><a [href]="link.help.client">Guía de compra</a></li>
                 <li><a [href]="link.help.sizes">Guía de tallas</a></li>
@@ -13,9 +13,9 @@
             </ul>
         </div>
 
-        <div class="page__app__footer__footer-container__row__enterprise">
+        <div class="footer-container__row__enterprise">
             <h5>Empresa</h5>
-            <ul class="page__app__footer__footer-container__row__enterprise__footer-links" *ngFor="let link of allLinks">
+            <ul class="footer-container__row__enterprise__footer-links" *ngFor="let link of allLinks">
                 <li><a [href]="link.enterprise.stores">Tiendas</a></li>
                 <li><a [href]="link.enterprise.company">Sobre nosotros</a></li>
                 <li><a [href]="link.enterprise.press">Prensa</a></li>
@@ -32,24 +32,24 @@
             </ul>
         </div>
 
-        <div class="page__app__footer__footer-container__row__links">
+        <div class="footer-container__row__links">
             <h5>Síguenos</h5>
-            <ul class="page__app__footer__footer-container__row__links__footer-links" *ngFor="let link of allLinks">
+            <ul class="footer-container__row__links__footer-links" *ngFor="let link of allLinks">
                 <li><a [href]="link.social.facebook">Facebook</a></li>
                 <li><a [href]="link.social.instagram">Instagram</a></li>
                 <li><a [href]="link.social.youtube">Youtube</a></li>
             </ul>
         </div>
 
-        <div class="page__app__footer__footer-container__row__qr" *ngFor="let link of allLinks">
+        <div class="footer-container__row__qr" *ngFor="let link of allLinks">
             <h5>Descarga nuestra app</h5>
             <img [src]="link.qr.src"
                 alt="código qr de Oysho" />
         </div>
     </div>
     <hr>
-    <div class="page__app__footer__footer-container__social">
-        <div class="page__app__footer__footer-container__social__copyright" *ngFor="let link of allLinks">
+    <div class="footer-container__social">
+        <div class="footer-container__social__copyright" *ngFor="let link of allLinks">
             <p>Copyright &copy; 2022 All Rights Reserved by
                 <a [href]="link.social.github">Mireia</a>.
             </p>

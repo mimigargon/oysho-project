@@ -1,54 +1,54 @@
-<div class="page__app__header__container">
-  <div class="page__app__header__container__menu-container">
+<div class="header-container">
+  <div class="header-container__menu-container">
     <button
-      class="page__app__header__container__menu-container__menu"
+      class="header-container__menu-container__menu"
       (mouseover)="showCategories = true"
     >
       <img
-        class="page__app__header__container__menu-container__menu__menu-img"
+        class="header-container__menu-container__menu__menu-img"
         src="../../../assets/images/menu-icon.svg"
         alt="menu-icon.svg"
       />
     </button>
   </div>
-  <div class="page__app__header__container__logo-container">
+  <div class="header-container__logo-container">
     <a routerLink="/home">
       <img
-        class="page__app__header__container__logo-container__logo"
+        class="header-container__logo-container__logo"
         src="../../../assets/images/Oysho_logo.png"
         alt="oysho-logo.png"
       />
     </a>
   </div>
-  <div class="page__app__header__container__searchbox-container">
+  <div class="header-container__searchbox-container">
     <button
-      class="page__app__header__container__searchbox-container__button-search"
+      class="header-container__searchbox-container__button-search"
     >
       <img
-        class="page__app__header__container__searchbox-container__button-search__search-icon"
+        class="header-container__searchbox-container__button-search__search-icon"
         src="../../../assets/images/search-icon.svg"
         alt="search-icon.svg"
       />
     </button>
     <input
-      class="page__app__header__container__searchbox-container__searchbox"
+      class="header-container__searchbox-container__searchbox"
       type="text"
       placeholder="Buscar productos..."
     />
   </div>
 </div>
 
-<div class="page__app__header__categories-container" (mouseover)="showCategories = true" (mouseleave)="showCategories = false">
+<div class="categories-container" (mouseover)="showCategories = true" (mouseleave)="showCategories = false">
 <div
-class="page__app__header__categories-container__frame--sidebar"
+class="categories-container__frame--sidebar"
 *ngIf="showCategories"
 >
 <ul
-  class="page__app__header__categories-container__frame__categories"
+  class="categories-container__frame__categories"
   *ngFor="let category of allCategories"
 >
   <li
-    class="page__app__header__categories-container__frame__categories__category"
+    class="categories-container__frame__categories__category"
     routerLink="products/{{category.id}}"
   >
     {{ category.name }}

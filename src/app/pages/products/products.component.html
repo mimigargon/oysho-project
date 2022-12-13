@@ -1,31 +1,31 @@
-<div class="page__app__products-header-frame">
-<div class="page__app__products-header-frame__header">
-    <a class="page__app__products-header-frame__header__arrow-back-link" routerLink="/home">
+<div class="products-header-frame">
+<div class="products-header-frame__header">
+    <a class="products-header-frame__header__arrow-back-link" routerLink="/home">
         <img
-        class="page__app__products-header-frame__header__arrow-back-link__icon"
+        class="products-header-frame__header__arrow-back-link__icon"
         src="../../../assets/images/arrow-back-icon.svg"
         alt="arrow-back-icon.svg"
         />
     </a>
-    <h1 class="page__app__products-header-frame__header__title">
+    <h1 class="products-header-frame__header__title">
       Los productos de la colección
     </h1>
 </div>
 </div>
 
-<div class="page__app__product-container">
-  <div class="page__app__product-container__products" *ngFor="let product of productList">
+<div class="product-container">
+  <div class="product-container__products" *ngFor="let product of productList">
     
     <div *ngFor="let image of product.image">
     <img
-      class="page__app__product-container__products__image"
+      class="product-container__products__image"
       [src]="image"
       alt="product.name"
       routerLink="/product/{{this.categoriesID}}/{{product.id}}/detail"
     />
   </div>
-    <p class="page__app__product-container__products__name">{{ product.name }}</p>
-    <p class="page__app__product-container__products__price">{{ product.price[0] }}€</p>
+    <p class="product-container__products__name">{{ product.name }}</p>
+    <p class="product-container__products__price">{{ product.price[0] }}€</p>
     <div *ngFor="let color of product.color">
       <img [src]="color">
     </div>
