@@ -8,12 +8,12 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: `products/:categoryId`,
+    path: `category/:categoryId`,
     loadChildren: () =>
-      import('./pages/products/products.module').then((m) => m.ProductsModule),
+      import('./pages/categories/categories.module').then((m) => m.CategoriesModule),
   },
   {
-    path: `product/:categoryId/:productId/detail`, loadChildren: () => import('./pages/detail/details.module').then((m) => m.DetailsModule)
+    path: `category/:categoryId/product/:productId`, loadChildren: () => import('./pages/detail/details.module').then((m) => m.DetailsModule)
   },
   { path: '', redirectTo: `home`, pathMatch: `full` },
 ];
@@ -22,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

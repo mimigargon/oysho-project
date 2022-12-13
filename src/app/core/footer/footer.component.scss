@@ -1,50 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-
-
-
 .footer-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    flex-direction: column;
     background-color: rgba(221, 221, 221, 0.192);
+}
 
-    &__row {
-        display: flex;
-        align-items: center;
-        font-family: "Roboto Condensed", sans-serif;
+.row,
+.copyright {
+    display: flex;
+    align-items: baseline;
+    font-family: "Roboto Condensed", sans-serif;
+    justify-content: space-around;
+    margin-top: 50px;
 
-        &__help, &__enterprise, &__links {
-            text-align: center;
-            &__list, &__footer-links {
-                list-style-type: none;
-
-                a {
-                    text-decoration: none;
-                    color: black;
-                }
-            }
-
-        }
-        &__qr {
-            img {
-                width: 50%;
-            }
+    &__help,
+    &__enterprise,
+    &__social,
+    &__qr {
+        h5 {
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 20px;
         }
     }
+}
 
-    &__social {
-        display: flex;
-        align-items: center;
-        font-family: "Roboto Condensed", sans-serif;
+.help-list,
+.enterprise-list,
+.social-list {
+    list-style-type: none;
+}
 
-        &__copyright {
-            a {
-                text-decoration: none;
-                color: black;
-            }
-        }
-    }
+.list-link {
+    text-decoration: none;
+    color: black;
+}
 
+.qr-image {
+    width: 50%;
+}
 
+.copyright-link {
+    text-decoration: none;
+    color: black;
 }

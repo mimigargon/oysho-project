@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { DetailsRoutingModule } from './details-routing.module';
 import { DetailComponent } from './detail.component';
+import { NgbCarousel, NgbCarouselModule, NgbSlide } from '@ng-bootstrap/ng-bootstrap';
+
 
 const components = [DetailComponent];
 
-const modules = [CommonModule, DetailsRoutingModule];
+const modules = [CommonModule, DetailsRoutingModule, NgbCarouselModule, NgbCarousel, NgbSlide];
 
 @NgModule({
   declarations: [...components],
   imports: [...modules],
+  exports: [...components]
 })
-export class DetailsModule {}
+export class DetailsModule { }

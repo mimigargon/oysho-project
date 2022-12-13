@@ -1,58 +1,85 @@
 <div class="footer-container">
-    <div class="footer-container__row">
-        <div class="footer-container__row__help">
-            <h5>Ayuda</h5>
-            <ul class="footer-container__row__help__list" *ngFor="let link of allLinks">
-                <li><a [href]="link.help.contact">Contacto</a></li>
-                <li><a [href]="link.help.client">Guía de compra</a></li>
-                <li><a [href]="link.help.sizes">Guía de tallas</a></li>
-                <li><a [href]="link.help.shipping">Envíos y devoluciones</a></li>
-                <li><a [href]="link.help.giftCard">Tarjeta regalo</a></li>
-                <li><a [href]="link.help.ticket">Solicitar
-                        factura</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-container__row__enterprise">
-            <h5>Empresa</h5>
-            <ul class="footer-container__row__enterprise__footer-links" *ngFor="let link of allLinks">
-                <li><a [href]="link.enterprise.stores">Tiendas</a></li>
-                <li><a [href]="link.enterprise.company">Sobre nosotros</a></li>
-                <li><a [href]="link.enterprise.press">Prensa</a></li>
-                <li><a [href]="link.enterprise.policies">Políticas</a></li>
-                <li><a
-                        [href]="link.enterprise.cookies">Política
-                        de cookies</a></li>
-                <li><a
-                        [href]="link.enterprise.cookiesSettings">Configuración
-                        de cookies</a></li>
-                <li><a
-                        [href]="link.enterprise.privacy">Política
-                        de privacidad</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-container__row__links">
-            <h5>Síguenos</h5>
-            <ul class="footer-container__row__links__footer-links" *ngFor="let link of allLinks">
-                <li><a [href]="link.social.facebook">Facebook</a></li>
-                <li><a [href]="link.social.instagram">Instagram</a></li>
-                <li><a [href]="link.social.youtube">Youtube</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-container__row__qr" *ngFor="let link of allLinks">
-            <h5>Descarga nuestra app</h5>
-            <img [src]="link.qr.src"
-                alt="código qr de Oysho" />
-        </div>
+  <div class="row">
+    <div class="row__help">
+      <h5>Ayuda</h5>
+      <ul class="help-list" *ngFor="let link of allLinks">
+        <li><a class="list-link" [href]="link.help.contact">Contacto</a></li>
+        <li>
+          <a class="list-link" [href]="link.help.client">Guía de compra</a>
+        </li>
+        <li>
+          <a class="list-link" [href]="link.help.sizes">Guía de tallas</a>
+        </li>
+        <li>
+          <a class="list-link" [href]="link.help.shipping"
+            >Envíos y devoluciones</a
+          >
+        </li>
+        <li>
+          <a class="list-link" [href]="link.help.giftCard">Tarjeta regalo</a>
+        </li>
+        <li>
+          <a class="list-link" [href]="link.help.ticket">Solicitar factura</a>
+        </li>
+      </ul>
     </div>
-    <hr>
-    <div class="footer-container__social">
-        <div class="footer-container__social__copyright" *ngFor="let link of allLinks">
-            <p>Copyright &copy; 2022 All Rights Reserved by
-                <a [href]="link.social.github">Mireia</a>.
-            </p>
-        </div>
+
+    <div class="row__enterprise">
+      <h5>Empresa</h5>
+      <ul class="enterprise-list" *ngFor="let link of allLinks">
+        <li>
+          <a class="list-link" [href]="link.enterprise.stores">Tiendas</a>
+        </li>
+        <li>
+          <a class="list-link" [href]="link.enterprise.company"
+            >Sobre nosotros</a
+          >
+        </li>
+        <li><a class="list-link" [href]="link.enterprise.press">Prensa</a></li>
+        <li>
+          <a class="list-link" [href]="link.enterprise.policies">Políticas</a>
+        </li>
+        <li>
+          <a class="list-link" [href]="link.enterprise.cookies"
+            >Política de cookies</a
+          >
+        </li>
+        <li>
+          <a class="list-link" [href]="link.enterprise.cookiesSettings"
+            >Configuración de cookies</a
+          >
+        </li>
+        <li>
+          <a class="list-link" [href]="link.enterprise.privacy"
+            >Política de privacidad</a
+          >
+        </li>
+      </ul>
     </div>
+
+    <div class="row__social">
+      <h5>Síguenos</h5>
+      <ul class="social-list" *ngFor="let link of allLinks">
+        <li><a class="list-link" [href]="link.social.facebook">Facebook</a></li>
+        <li>
+          <a class="list-link" [href]="link.social.instagram">Instagram</a>
+        </li>
+        <li><a class="list-link" [href]="link.social.youtube">Youtube</a></li>
+      </ul>
+    </div>
+
+    <div class="row__qr" *ngFor="let link of allLinks">
+      <h5>Descarga nuestra app</h5>
+      <img class="qr-image" [src]="link.qr.src" alt="código qr de Oysho" />
+    </div>
+  </div>
+  <hr />
+  <div class="copyright">
+    <div class="copyright-link-container" *ngFor="let link of allLinks">
+      <p>
+        Copyright &copy; 2022 All Rights Reserved by
+        <a class="copyright-link" [href]="link.social.github">Mireia</a>.
+      </p>
+    </div>
+  </div>
 </div>

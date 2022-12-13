@@ -1,0 +1,12 @@
+<div class="card-container">
+  <div class="card-image">
+    <img [src]="product.image[0]" alt="product.name" />
+  </div>
+  <p class="card-name">{{ product.name }}</p>
+  <p class="card-price">{{ product.price[0] }}€</p>
+  <div class="card-color-container">
+    <div class="card-color" *ngFor="let color of product.color">
+      <img [src]="color" />
+    </div>
+  </div>
+</div>

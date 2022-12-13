@@ -1,8 +1,12 @@
-<h1 class="home-title">ÚLTIMA SEMANA</h1>
 <div class="home-container">
-    <div class="home-container__products" *ngFor="let product of lastWeekCategory">
-        <img class="home-container__products__image" [src]="product.image" alt="product.name" routerLink="products/{{product.id}}">
-        <p class="home-container__products__name">{{product.name}}</p>
-        <p class="home-container__products__price">{{product.price[0]}}€</p>
-    </div>
+  <img
+    class="ski-image"
+    src="../../../assets/images/après-ski-oysho.jpg"
+    routerLink="/category/{{ this.skiCategoryID }}"
+  />
+  <img
+    class="vacation-image"
+    src="../../../assets/images/vacation-shop-oysho.jpg"
+    routerLink="/category/{{ this.vacationCategoryID }}"
+  />
 </div>

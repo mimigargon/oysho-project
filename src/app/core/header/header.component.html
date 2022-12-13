@@ -1,58 +1,43 @@
 <div class="header-container">
-  <div class="header-container__menu-container">
-    <button
-      class="header-container__menu-container__menu"
-      (mouseover)="showCategories = true"
-    >
+  <div class="menu-container">
+    <button class="menu-container__button" (click)="showCategoriesToggle()">
       <img
-        class="header-container__menu-container__menu__menu-img"
+        class="button-icon"
         src="../../../assets/images/menu-icon.svg"
         alt="menu-icon.svg"
       />
     </button>
   </div>
-  <div class="header-container__logo-container">
+  <div class="logo-container">
     <a routerLink="/home">
       <img
-        class="header-container__logo-container__logo"
+        class="logo-container__logo"
         src="../../../assets/images/Oysho_logo.png"
         alt="oysho-logo.png"
       />
     </a>
   </div>
-  <div class="header-container__searchbox-container">
-    <button
-      class="header-container__searchbox-container__button-search"
-    >
+  <div class="searchbox-container">
+    <button class="searchbox-container__button-search">
       <img
-        class="header-container__searchbox-container__button-search__search-icon"
+        class="search-icon"
         src="../../../assets/images/search-icon.svg"
         alt="search-icon.svg"
       />
     </button>
-    <input
-      class="header-container__searchbox-container__searchbox"
-      type="text"
-      placeholder="Buscar productos..."
-    />
+    <input class="searchbox" type="text" placeholder="Buscar productos..." />
   </div>
 </div>
 
-<div class="categories-container" (mouseover)="showCategories = true" (mouseleave)="showCategories = false">
-<div
-class="categories-container__frame--sidebar"
-*ngIf="showCategories"
->
-<ul
-  class="categories-container__frame__categories"
-  *ngFor="let category of allCategories"
->
-  <li
-    class="categories-container__frame__categories__category"
-    routerLink="products/{{category.id}}"
-  >
-    {{ category.name }}
-  </li>
-</ul>
-</div>
+<div class="categories-container">
+  <div class="categories-container__sidebar" *ngIf="showCategories">
+    <ul class="categories-list" *ngFor="let category of allCategories">
+      <li
+        class="categories-list__category"
+        routerLink="category/{{ category.id }}"
+      >
+        {{ category.name }}
+      </li>
+    </ul>
+  </div>
 </div>

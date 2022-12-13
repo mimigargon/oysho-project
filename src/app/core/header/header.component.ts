@@ -11,8 +11,8 @@ import { ProductsService } from '../services/products/products.service';
 })
 export class HeaderComponent implements OnInit {
   allCategories?: CategoriesElements[]
-  showCategories: boolean = false;
-  constructor(private ProductsService: ProductsService) {}
+  showCategories?: boolean;
+  constructor(private ProductsService: ProductsService) { }
 
 
   ngOnInit(): void {
@@ -28,5 +28,9 @@ export class HeaderComponent implements OnInit {
         console.error(error)
       }
     })
+  }
+
+  showCategoriesToggle() {
+    this.showCategories = !this.showCategories;
   }
 }

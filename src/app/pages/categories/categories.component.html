@@ -1,0 +1,30 @@
+<div class="category-header">
+  <div class="header-container">
+    <a class="header-container__link" routerLink="/home">
+      <img
+        class="link-icon"
+        src="../../../assets/images/arrow-back-icon.svg"
+        alt="arrow-back-icon.svg"
+      />
+    </a>
+    <input
+      class="header-container__searchbox"
+      type="text"
+      [(ngModel)]="filter"
+      placeholder="Buscar productos"
+    />
+  </div>
+  <h1 class="title">Los productos de la colección</h1>
+</div>
+
+<div class="product-container">
+  <div
+    class="products"
+    *ngFor="let product of productList | filterProduct : filter"
+  >
+    <app-card
+      [product]="product"
+      routerLink="/category/{{ this.categoriesID }}/product/{{ product.id }}"
+    ></app-card>
+  </div>
+</div>

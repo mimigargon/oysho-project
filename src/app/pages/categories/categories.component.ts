@@ -7,18 +7,19 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 
 @Component({
   selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.scss']
 })
-export class ProductsComponent implements OnInit {
-  public productList?: Products[];
+export class CategoriesComponent implements OnInit {
+  public productList!: Products[];
   public categoriesID?: string | null;
-  constructor(private ProductsService: ProductsService, private route: ActivatedRoute, private router: Router) {}
+  public filter?: string;
+  constructor(private ProductsService: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.categoriesID = params.get('categoryId');
-      if(this.categoriesID) {
+      if (this.categoriesID) {
         this.getProductsList(this.categoriesID)
       }
     })
@@ -36,5 +37,5 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  
+
 }

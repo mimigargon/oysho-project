@@ -7,39 +7,33 @@ import { CategoriesElements, Products } from 'src/app/core/services/products/mod
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent  implements OnInit{
-  lastWeekCategory?: Products[];
-  categoriesID?: CategoriesElements[];
- constructor(private ProductsService: ProductsService) {}
+export class HomeComponent implements OnInit {
+  categories?: CategoriesElements[];
+  skiCategoryID?: string;
+  vacationCategoryID?: string;
+  constructor(private ProductsService: ProductsService) { }
 
- ngOnInit(): void {
-   this.getCategory();
- }
+  ngOnInit(): void {
+    this.getCategory();
+  }
 
- getCategory(){
+  getCategory() {
     this.ProductsService.getCategories().subscribe({
-      next: (result) =>  {
-        this.categoriesID = result;
-        for(let id of this.categoriesID){
-          if(id.name.includes("ÚLTIMA SEMANA")){
-            let categoryId = id.id
-            let categoryIdString = categoryId.toString();
-            this.getLastWeekCategory(categoryIdString)
+      next: (result) => {
+        this.categories = result
+        for (let id of this.categories) {
+          if (id.name.includes("ÚLTIMA SEMANA")) {
+            this.skiCategoryID = id.id.toString();
+          }
+          if (id.name.includes("VACATION SHOP")) {
+            this.vacationCategoryID = id.id.toString();
           }
         }
+
+      },
+      error: (error) => {
+        console.error(error)
       }
     })
   }
-
- getLastWeekCategory(id: string) {
-  this.ProductsService.getProductsList(id).subscribe({
-    next: (result) => {
-      this.lastWeekCategory = result;
-    },
-    error: (error) => {
-      console.log(error)
-    }
-
-  })
- }
 }

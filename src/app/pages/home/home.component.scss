@@ -1,32 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
-
-.home-title {
-    font-family: "Roboto Condensed", sans-serif;
+.home-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
 
-.home-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    margin: 5%;
-    
-    &__products {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
-        &__image {
-            width: 60%;
-            cursor: pointer;
-        }
-
-        &__name, &__price {
-            font-family: "Roboto Condensed", sans-serif;
-        }
+    .ski-image,
+    .vacation-image {
+        width: 1255px;
+        cursor: pointer;
     }
 }
