@@ -56,7 +56,6 @@ export class CategoriesComponent implements OnInit {
       }
       return 1;
     })]
-    console.log(this.productList[0])
     return this.productList;
   }
 

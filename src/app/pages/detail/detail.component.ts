@@ -19,7 +19,6 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.categoryId, this.productId)
     if (this.categoryId && this.productId) {
       this.getDetail(this.categoryId, this.productId)
     }
@@ -30,7 +29,6 @@ export class DetailComponent implements OnInit {
     this.ProductsService.getProductDetails(categoryId, productId).subscribe({
       next: (result) => {
         this.productDetails = result;
-        console.log(this.productDetails)
       },
       error: (error) => {
         console.error(error)
