@@ -6,7 +6,7 @@ import { Products } from 'src/app/core/services/products/models/products.interfa
 })
 export class FilterProductPipe implements PipeTransform {
 
-  transform(list: Products[], filter: string = ''): Products[] {
+  transform(list: Products[] = [], filter: string = ''): Products[] {
     const lowerCaseFilter: string = filter.toLowerCase().trim();
 
     const filteredProducts: Products[] = list.filter((product: Products) => {

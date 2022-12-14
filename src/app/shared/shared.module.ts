@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './components/card/card.component';
 import { FilterProductPipe } from './pipes/filter-product.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 

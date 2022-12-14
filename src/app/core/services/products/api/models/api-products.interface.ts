@@ -162,7 +162,7 @@ export interface ApiDetail {
     additionalInfo: string,
     reference: string,
     displayReference: string,
-    isSport: boolean, 
+    isSport: boolean,
     defaultImageType: string,
     composition: unknown,
     compositionByZone: unknown,

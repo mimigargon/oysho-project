@@ -1,4 +1,14 @@
 <div class="detail-container">
+  <a
+    class="detail-container__link"
+    routerLink="/category/{{ this.categoryId }}"
+  >
+    <img
+      class="link-icon"
+      src="../../../assets/images/arrow-back-icon.svg"
+      alt="arrow-back-icon.svg"
+    />
+  </a>
   <div class="detail-container__card">
     <h1 class="card-title">{{ productDetails.name }}</h1>
     <ngb-carousel>
@@ -8,12 +18,12 @@
         </div>
       </ng-template>
     </ngb-carousel>
-    <p class="card-description">{{ productDetails.longDescription }}</p>
-    <p class="card-price">{{ productDetails.price[0] }}€</p>
     <div class="card-color-container">
       <div class="card-color" *ngFor="let color of productDetails.color">
         <img [src]="color" />
       </div>
     </div>
+    <p class="card-description">{{ productDetails.longDescription }}</p>
+    <p class="card-price">{{ productDetails.price[0] }}€</p>
   </div>
 </div>

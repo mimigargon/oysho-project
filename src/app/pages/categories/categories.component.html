@@ -17,14 +17,22 @@
   <h1 class="title">Los productos de la colección</h1>
 </div>
 
+<select
+  class="categories-select"
+  id="sort-by"
+  (ngModelChange)="onSort($event)"
+  [(ngModel)]="sort"
+>
+  <option value="" selected disabled hidden>Filtrar por...</option>
+  <option value="Name">Nombre del producto A-Z</option>
+  <option value="lowPrice">Precio de menor a mayor</option>
+  <option value="highPrice">Precio de mayor a menor</option>
+</select>
+
 <div class="product-container">
-  <div
-    class="products"
+  <app-card
     *ngFor="let product of productList | filterProduct : filter"
-  >
-    <app-card
-      [product]="product"
-      routerLink="/category/{{ this.categoriesID }}/product/{{ product.id }}"
-    ></app-card>
-  </div>
+    [product]="product"
+    routerLink="/category/{{ this.categoriesID }}/product/{{ product.id }}"
+  ></app-card>
 </div>

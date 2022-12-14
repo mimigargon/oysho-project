@@ -19,12 +19,17 @@
         border-radius: 20px;
         border: 1px solid gray;
         margin-right: 35px;
+        font-family: "Roboto Condensed", sans-serif;
     }
 
     &__link {
         text-decoration: none;
         display: flex;
     }
+}
+
+.categories-select {
+    margin-top: 20px;
 }
 
 .link-icon {
@@ -39,6 +44,7 @@
     text-align: center;
     text-transform: uppercase;
     display: flex;
+    margin-top: 50px;
 }
 
 .product-container {

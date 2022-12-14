@@ -40,7 +40,8 @@ export class ProductsService {
             nameEn: product.nameEn,
             image: this.getProductImages(product),
             longDescription: product.bundleProductSummaries[0]?.detail?.longDescription,
-            price: this.getPrices(product),
+            price: product.bundleProductSummaries[0]?.detail?.colors[0]?.sizes[0]?.price,
+            formattedPrice: this.getPrices(product),
             color: this.getColors(product)
           }))
       })
@@ -92,7 +93,8 @@ export class ProductsService {
         nameEn: ApiProducts.nameEn,
         image: this.getProductImages(ApiProducts),
         longDescription: ApiProducts.bundleProductSummaries[0]?.detail?.longDescription,
-        price: this.getPrices(ApiProducts),
+        price: ApiProducts.bundleProductSummaries[0]?.detail?.colors[0]?.sizes[0]?.price,
+        formattedPrice: this.getPrices(ApiProducts),
         color: this.getColors(ApiProducts),
       }))
     )

@@ -6,14 +6,15 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
   public productList!: Products[];
   public categoriesID?: string | null;
-  public filter?: string;
+  public filter: string = "";
+  public sort!: string;
   constructor(private ProductsService: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -29,13 +30,34 @@ export class CategoriesComponent implements OnInit {
     this.ProductsService.getProductsList(id).subscribe({
       next: (result) => {
         this.productList = result;
-        console.log(this.productList)
       },
       error: (error) => {
-        console.log(error)
+        console.error(error)
       }
     })
   }
 
+  onSort(event: string) {
+    this.productList = [...this.productList.sort((a, b) => {
+      if (event === 'highPrice') {
+        return +b.price - +a.price;
+      }
+      return 1;
+    })]
+    this.productList = [...this.productList.sort((a, b) => {
+      if (event === 'lowPrice') {
+        return +a.price - +b.price;
+      }
+      return 1;
+    })]
+    this.productList = [...this.productList.sort((a, b) => {
+      if (event === 'Name') {
+        return a.name < b.name ? 1 : -1;
+      }
+      return 1;
+    })]
+    console.log(this.productList[0])
+    return this.productList;
+  }
 
 }
