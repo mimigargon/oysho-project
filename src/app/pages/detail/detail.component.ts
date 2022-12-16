@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class DetailComponent implements OnInit {
   categoryId?: string | null;
   productId?: string | null;
-  productDetails!: ProductDetails;
+  productDetails?: ProductDetails;
   constructor(private router: Router, private route: ActivatedRoute, private ProductsService: ProductsService) {
     this.categoryId = this.route.snapshot.paramMap.get('categoryId');
     this.productId = this.route.snapshot.paramMap.get('productId')

@@ -37,7 +37,7 @@ export class CategoriesComponent implements OnInit {
     })
   }
 
-  onSort(event: string) {
+  onSort(event: any) {
     this.productList = [...this.productList.sort((a, b) => {
       if (event === 'highPrice') {
         return +b.price - +a.price;

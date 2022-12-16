@@ -72,13 +72,13 @@ export class ProductsService {
   }
 
   getPrices(product: ApiProducts) {
-    const pricesArray: string[] = [];
+    let pricesFormatted: string = "";
     product?.bundleProductSummaries[0]?.detail?.colors?.forEach((color) => {
       color.sizes.forEach((size) => {
-        pricesArray.push(this.insertDecimal(Number(size.price)))
+        pricesFormatted = this.insertDecimal(Number(size.price))
       });
     });
-    return pricesArray;
+    return pricesFormatted;
   }
 
   insertDecimal(number: number) {

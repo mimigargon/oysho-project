@@ -16,7 +16,7 @@ export interface Products {
     image: string[],
     longDescription: string,
     price: string;
-    formattedPrice: string[];
+    formattedPrice: string;
     color: string[];
 }
 
@@ -27,7 +27,7 @@ export interface ProductDetails {
     image: string[],
     longDescription: string,
     price: string;
-    formattedPrice: string[];
+    formattedPrice: string;
     color: string[];
 }
 

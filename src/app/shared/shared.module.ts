@@ -4,6 +4,7 @@ import { CardComponent } from './components/card/card.component';
 import { FilterProductPipe } from './pipes/filter-product.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 const modules = [CommonModule, ReactiveFormsModule, FormsModule]
 const components = [CardComponent]
 const pipes = [FilterProductPipe]
@@ -11,7 +12,8 @@ const pipes = [FilterProductPipe]
 @NgModule({
   declarations: [
     ...components,
-    ...pipes
+    ...pipes,
+
 
   ],
   imports: [
