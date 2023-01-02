@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "dc8c3ba2-51fe-4fbd-99de-b8c4478a5ed5",
+		"name": "OYSHO CART",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST a /cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"cartItems\":[{\"sku\":102460162, \"style\": \"02\", \"quantity\":1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://axpreprueccwpslb1-oysho.central.inditex.grp/itxrest/2/order/store/64009602/cart?languageId=100&appId=1&ts=1647333829906",
+					"protocol": "https",
+					"host": [
+						"axpreprueccwpslb1-oysho",
+						"central",
+						"inditex",
+						"grp"
+					],
+					"path": [
+						"itxrest",
+						"2",
+						"order",
+						"store",
+						"64009602",
+						"cart"
+					],
+					"query": [
+						{
+							"key": "languageId",
+							"value": "100"
+						},
+						{
+							"key": "appId",
+							"value": "1"
+						},
+						{
+							"key": "ts",
+							"value": "1647333829906"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a /cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://axpreprueccwpslb1-oysho.central.inditex.grp/itxrest/2/order/store/64009602/cart?languageId=100&appId=1&ts=1647333829906",
+					"protocol": "https",
+					"host": [
+						"axpreprueccwpslb1-oysho",
+						"central",
+						"inditex",
+						"grp"
+					],
+					"path": [
+						"itxrest",
+						"2",
+						"order",
+						"store",
+						"64009602",
+						"cart"
+					],
+					"query": [
+						{
+							"key": "languageId",
+							"value": "100"
+						},
+						{
+							"key": "appId",
+							"value": "1"
+						},
+						{
+							"key": "ts",
+							"value": "1647333829906"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

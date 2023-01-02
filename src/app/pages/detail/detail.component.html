@@ -10,7 +10,7 @@
     />
   </a>
   <div class="detail-container__card">
-    <h1 class="card-title">{{ productDetails?.name }}</h1>
+    <h1 class="card-title">{{ productDetails.name }}</h1>
     <ngb-carousel>
       <ng-template ngbSlide *ngFor="let image of productDetails?.image">
         <div class="detail-card-image">
@@ -23,7 +23,10 @@
         <img [src]="color" />
       </div>
     </div>
-    <p class="card-description">{{ productDetails?.longDescription }}</p>
-    <p class="card-price">{{ productDetails?.formattedPrice }}€</p>
+    <p class="card-description">{{ productDetails.longDescription }}</p>
+    <p class="card-price">{{ productDetails.formattedPrice }}€</p>
+    <button class="btn btn-primary" (click)="addToCart()">
+      Añadir a la cesta
+    </button>
   </div>
 </div>

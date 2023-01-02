@@ -1,7 +1,10 @@
-import { ProductDetails } from './../../core/services/products/models/products.interface';
+import { ProductDetails, Products } from './../../core/services/products/models/products.interface';
 import { ProductsService } from './../../core/services/products/products.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { StoreState } from '../../store/states/store.state';
+import { Store } from '@ngrx/store';
+import * as cartActions from '../../store/actions/cart.actions';
 
 
 @Component({
@@ -12,8 +15,8 @@ import { Component, OnInit } from '@angular/core';
 export class DetailComponent implements OnInit {
   categoryId?: string | null;
   productId?: string | null;
-  productDetails?: ProductDetails;
-  constructor(private router: Router, private route: ActivatedRoute, private ProductsService: ProductsService) {
+  productDetails!: ProductDetails;
+  constructor(private router: Router, private route: ActivatedRoute, private ProductsService: ProductsService, private store: Store<StoreState>) {
     this.categoryId = this.route.snapshot.paramMap.get('categoryId');
     this.productId = this.route.snapshot.paramMap.get('productId')
   }
@@ -34,5 +37,9 @@ export class DetailComponent implements OnInit {
         console.error(error)
       }
     })
+  }
+
+  addToCart() {
+    this.store.dispatch(cartActions.addCart({ product: this.productDetails }))
   }
 }
