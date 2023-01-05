@@ -27,6 +27,15 @@
     </button>
     <input class="searchbox" type="text" placeholder="Buscar productos..." />
   </div>
+  <div class="cart-icon-container">
+    <button class="cart-icon-container__button" routerLink="/shop-cart">
+      <img
+        class="cart-icon"
+        src="../../../assets/images/cart-icon.svg"
+        alt="cart-icon.svg"
+      />
+    </button>
+  </div>
 </div>
 
 <div class="categories-container">
@@ -41,3 +50,8 @@
     </ul>
   </div>
 </div>
+
+<!-- routerLink="category/{{ category.id }}/product/{{
+  product.id
+}}/add-to-cart"
+ -->

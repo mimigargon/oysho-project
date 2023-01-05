@@ -1,9 +1,9 @@
-import { Products } from "src/app/core/services/products/models/products.interface";
+import { CartProduct } from '../../core/services/cart/models/cart.interface';
 
 export interface CartState {
-  product: Products | undefined;
+  products: CartProduct[];
 }
 
 export const cartInitialState: CartState = {
-  product: undefined
+  products: []
 };

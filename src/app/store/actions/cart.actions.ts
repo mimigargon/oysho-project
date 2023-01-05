@@ -1,16 +1,26 @@
 import { createAction, props } from '@ngrx/store';
-import { ProductDetails } from 'src/app/core/services/products/models/products.interface';
+import { CartProduct } from '../../core/services/cart/models/cart.interface';
 
-export const ActionTypes = {
-  ADD_CART: '[Cart] Add products to cart',
-  DELETE_CART: '[Cart] Delete products from cart',
-};
-
-export const addCart = createAction(
-  ActionTypes.ADD_CART,
-  props<{ product: ProductDetails }>()
+export const addCartProducts = createAction(
+  '[Add Cart Product] Products added to cart',
+  props<{ products: CartProduct[] }>()
 );
 
-export const deleteCart = createAction(
-  ActionTypes.DELETE_CART,
+export const addCartProductsSuccess = createAction(
+  '[Add Cart Products Success] Products added to cart successfully',
+
+)
+
+export const loadCartProducts = createAction(
+  '[Load Cart Products] Products loaded to cart',
+
 );
+export const loadCartProductsSuccess = createAction(
+  '[Load Cart Products Success] Products loaded to cart successfully',
+  props<{ products: CartProduct[] }>()
+);
+
+
+
+
+

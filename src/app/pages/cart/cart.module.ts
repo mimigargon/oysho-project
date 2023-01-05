@@ -5,6 +5,7 @@ import { CartRoutingModule } from './cart-routing.module';
 import { CartComponent } from './cart.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterProductPipe } from '../../shared/pipes/filter-product.pipe';
 
 const components = [CartComponent];
 const modules = [CommonModule, CartRoutingModule, SharedModule, ReactiveFormsModule, FormsModule];

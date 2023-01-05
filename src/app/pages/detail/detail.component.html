@@ -25,7 +25,7 @@
     </div>
     <p class="card-description">{{ productDetails.longDescription }}</p>
     <p class="card-price">{{ productDetails.formattedPrice }}€</p>
-    <button class="btn btn-primary" (click)="addToCart()">
+    <button class="btn btn-primary" (click)="setProducts([productDetails])">
       Añadir a la cesta
     </button>
   </div>

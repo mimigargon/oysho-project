@@ -1,0 +1,16 @@
+.cart-container {
+    align-items: center;
+    width: 100%;
+
+    &__link {
+        text-decoration: none;
+        display: flex;
+    }
+}
+
+.link-icon {
+    width: 3%;
+    cursor: pointer;
+    margin-left: 35px;
+    margin-top: 10px;
+}
