@@ -20,4 +20,8 @@ export class CartService {
     localStorage.setItem('cartProducts', JSON.stringify(products))
   }
 
+  getProducts(): Observable<CartProduct> {
+    return of(JSON.parse(localStorage.getItem('cartProducts')!))
+  }
+
 }

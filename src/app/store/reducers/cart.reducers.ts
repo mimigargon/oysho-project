@@ -5,7 +5,9 @@ import * as cartActions from '../actions/cart.actions';
 const cartReducerCreator = createReducer(
   cartInitialState,
   on(cartActions.addProducts, (state, { products }) => ({ ...state, products: [...state.products, products] })),
-  on(cartActions.addProductsSuccess, (state => ({ ...state })))
+  on(cartActions.addProductsSuccess, (state => ({ ...state }))),
+  on(cartActions.getProducts, (state => ({ ...state }))),
+  on(cartActions.getProductsSuccess, (state, { products }) => ({ ...state, products: [...state.products, products] }))
 
 
 );

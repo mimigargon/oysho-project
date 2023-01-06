@@ -11,6 +11,6 @@
   <h1 class="title">Los productos del carrito</h1>
 </div>
 
-<div class="container" *ngFor="let product of cartProducts">
-  <app-card [product]="product"></app-card>
+<div class="product-container">
+  <app-card *ngFor="let product of cartProducts" [product]="product"></app-card>
 </div>
