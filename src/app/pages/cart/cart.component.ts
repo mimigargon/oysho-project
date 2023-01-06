@@ -18,8 +18,7 @@ export class CartComponent implements OnInit {
   constructor(private store: Store<StoreState>) { }
 
   ngOnInit() {
-    this.store.select('cart').subscribe((products) => this.cartProducts = products.products);
-    this.store.dispatch(cartActions.loadCartProducts());
+
   }
 }
 

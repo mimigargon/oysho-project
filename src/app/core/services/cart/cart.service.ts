@@ -12,29 +12,12 @@ export class CartService {
   constructor() { }
 
 
-  setProducts(product: CartProduct[]): Observable<void> {
-    return new Observable(observer => {
-      let currentProduct: any = localStorage.getItem('cartProducts');
-      if (currentProduct === null) {
-        localStorage.setItem('cartProducts', JSON.stringify([product]));
-      } else {
-        currentProduct = JSON.parse(currentProduct);
-        currentProduct!.push(product);
-        localStorage.setItem('cartProducts', JSON.stringify(currentProduct));
-      }
-      observer.next();
-      observer.complete();
-
-    })
+  setProducts(products: CartProduct[]): void {
+    let currentProduct = localStorage.getItem('cartProducts');
+    if (currentProduct) {
+      products = [...JSON.parse(currentProduct), ...products]
+    }
+    localStorage.setItem('cartProducts', JSON.stringify(products))
   }
-
-  getProducts(key: string): Observable<CartProduct> {
-    return new Observable(observer => {
-      let product: CartProduct = JSON.parse(localStorage.getItem(key)!);
-      observer.next(product);
-      observer.complete();
-    })
-  }
-
 
 }

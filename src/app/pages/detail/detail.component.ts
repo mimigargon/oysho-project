@@ -8,7 +8,7 @@ import * as cartActions from '../../store/actions/cart.actions';
 import { CartService } from 'src/app/core/services/cart/cart.service';
 import { CartProduct } from '../../core/services/cart/models/cart.interface';
 import { filter, Subscription } from 'rxjs';
-import { addCartProductsSuccess } from '../../store/actions/cart.actions';
+
 
 
 @Component({
@@ -46,10 +46,9 @@ export class DetailComponent implements OnInit {
     })
   }
 
-  setProducts(product: CartProduct[]) {
-    this.store.dispatch(cartActions.addCartProducts({ products: product }))
-
-
+  addProducts(product: CartProduct) {
+    this.store.dispatch(cartActions.addProducts({ products: product }));
   }
+
 
 }
