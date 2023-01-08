@@ -11,7 +11,7 @@ import { ProductsService } from '../services/products/products.service';
 })
 export class HeaderComponent implements OnInit {
   allCategories?: CategoriesElements[]
-  showCategories?: boolean;
+  showCategories: boolean = false;
   constructor(private ProductsService: ProductsService) { }
 
 

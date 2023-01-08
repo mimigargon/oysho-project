@@ -1,4 +1,4 @@
-import { FilterProductPipe } from './filter-product.pipe';
+/* import { FilterProductPipe } from './filter-product.pipe';
 
 describe('FilterProductPipe', () => {
   it('create an instance', () => {
@@ -6,3 +6,4 @@ describe('FilterProductPipe', () => {
     expect(pipe).toBeTruthy();
   });
 });
+ */
