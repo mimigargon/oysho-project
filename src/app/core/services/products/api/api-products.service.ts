@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, timestamp } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../../environments/environment';
 import { ApiCategories, ApiCategoriesElement, ApiList, ApiProducts } from './models/api-products.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiProductsService  {
+export class ApiProductsService {
 
   constructor(private http: HttpClient) { }
 

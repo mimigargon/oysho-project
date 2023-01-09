@@ -1,0 +1,16 @@
+<div class="cart-header">
+  <div class="header-container">
+    <a class="header-container__link" routerLink="/home">
+      <img
+        class="link-icon"
+        src="../../../assets/images/arrow-back-icon.svg"
+        alt="arrow-back-icon.svg"
+      />
+    </a>
+  </div>
+  <h1 class="title">Los productos del carrito</h1>
+</div>
+
+<div class="product-container">
+  <app-card *ngFor="let product of cartProducts" [product]="product"></app-card>
+</div>

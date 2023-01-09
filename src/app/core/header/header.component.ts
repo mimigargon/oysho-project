@@ -10,17 +10,17 @@ import { ProductsService } from '../services/products/products.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  allCategories?: CategoriesElements[]
-  showCategories?: boolean;
-  constructor(private ProductsService: ProductsService) { }
+  allCategories: CategoriesElements[] = [];
+  showCategories: boolean = false;
+  constructor(private productsService: ProductsService) { }
 
 
   ngOnInit(): void {
     this.getAllCategories()
   }
 
-  getAllCategories() {
-    this.ProductsService.getCategories().subscribe({
+  async getAllCategories() {
+    await this.productsService.getCategories().subscribe({
       next: (result) => {
         this.allCategories = result;
       },
