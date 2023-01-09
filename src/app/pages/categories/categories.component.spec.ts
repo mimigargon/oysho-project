@@ -4,11 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ProductsService } from '../../core/services/products/products.service';
 import { FilterProductPipe } from '../../shared/pipes/filter-product.pipe';
-import { ApiProductsService } from '../../core/services/products/api/api-products.service';
-import { ApiList } from 'src/app/core/services/products/api/models/api-products.interface';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Products } from '../../core/services/products/models/products.interface';
-import { getProducts } from '../../store/actions/cart.actions';
 import { of } from 'rxjs';
 
 describe('CategoriesComponent', () => {
@@ -29,10 +25,12 @@ describe('CategoriesComponent', () => {
         RouterTestingModule, HttpClientTestingModule
       ],
       declarations: [CategoriesComponent, FilterProductPipe],
-      providers: [ProductsService, {
-        provide: ProductsService,
-        useValue: productServiceMock
-      }],
+      providers: [
+        {
+          provide: ProductsService,
+          useValue: productServiceMock
+        }
+      ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     }).compileComponents();
   });

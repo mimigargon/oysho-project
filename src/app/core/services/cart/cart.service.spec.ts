@@ -79,9 +79,10 @@ describe('CartService', () => {
     service.setProducts(product);
     localStorage.setItem('cartProduct', JSON.stringify(product));
     let currentProduct = localStorage.getItem('cartProduct');
-    expect(currentProduct).toBeTruthy();
     currentProduct = '[{"cartProduct": "product"}]'
+    expect(currentProduct).toBeTruthy();
     product = [...JSON.parse(currentProduct), ...product]
+    expect(product).toBe(product)
     expect(product.length).toBe(2);
     localStorage.setItem('cartProduct', JSON.stringify(product))
   });

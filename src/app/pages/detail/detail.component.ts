@@ -1,13 +1,12 @@
-import { ProductDetails, Products } from './../../core/services/products/models/products.interface';
+import { ProductDetails } from './../../core/services/products/models/products.interface';
 import { ProductsService } from './../../core/services/products/products.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { StoreState } from '../../store/states/store.state';
 import { Store } from '@ngrx/store';
-import * as cartActions from '../../store/actions/cart.actions';
-import { CartService } from 'src/app/core/services/cart/cart.service';
+import * as fromCartActions from '../../store/actions/cart.actions';
+import { CartService } from '../../core/services/cart/cart.service';
 import { CartProduct } from '../../core/services/cart/models/cart.interface';
-import { filter, Subscription } from 'rxjs';
 
 
 
@@ -46,8 +45,9 @@ export class DetailComponent implements OnInit {
     })
   }
 
-  addProducts(product: CartProduct) {
-    this.store.dispatch(cartActions.addProducts({ products: product }));
+  addProduct(product: CartProduct) {
+    const action = fromCartActions.addProducts({ products: product });
+    this.store.dispatch(action);
   }
 
 

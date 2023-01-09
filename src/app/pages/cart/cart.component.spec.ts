@@ -23,8 +23,9 @@ describe('CartComponent', () => {
         StoreModule.forRoot({}),
         EffectsModule.forRoot([]),
       ],
+      declarations: [CartComponent],
       providers: [
-        CartComponent, provideMockStore({ initialState })
+        provideMockStore({ initialState })
       ],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA

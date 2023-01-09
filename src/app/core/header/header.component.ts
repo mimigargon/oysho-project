@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
     await this.productsService.getCategories().subscribe({
       next: (result) => {
         this.allCategories = result;
-        console.log(this.allCategories)
       },
       error: (error) => {
         console.error(error)
