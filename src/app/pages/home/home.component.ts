@@ -11,14 +11,14 @@ export class HomeComponent implements OnInit {
   categories?: CategoriesElements[];
   skiCategoryID?: string;
   vacationCategoryID?: string;
-  constructor(private ProductsService: ProductsService) { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
     this.getCategory();
   }
 
   getCategory() {
-    this.ProductsService.getCategories().subscribe({
+    this.productsService.getCategories().subscribe({
       next: (result) => {
         this.categories = result
         for (let id of this.categories) {

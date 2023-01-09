@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap } from 'rxjs';
 import { CategoriesElements, Products } from 'src/app/core/services/products/models/products.interface';
 import { ProductsService } from '../../core/services/products/products.service';
+import { FilterProductPipe } from '../../shared/pipes/filter-product.pipe';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class CategoriesComponent implements OnInit {
   public categoriesID?: string | null;
   public filter: string = "";
   public sort!: string;
-  constructor(private ProductsService: ProductsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private productsService: ProductsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -27,7 +28,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   getProductsList(id: string) {
-    this.ProductsService.getProductsList(id).subscribe({
+    this.productsService.getProductsList(id).subscribe({
       next: (result) => {
         this.productList = result;
       },

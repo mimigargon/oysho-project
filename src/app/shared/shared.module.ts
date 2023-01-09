@@ -12,13 +12,10 @@ const pipes = [FilterProductPipe]
 @NgModule({
   declarations: [
     ...components,
-    ...pipes,
-
-
   ],
   imports: [
     ...modules
   ],
-  exports: [...pipes, ...components]
+  exports: [...components],
 })
 export class SharedModule { }

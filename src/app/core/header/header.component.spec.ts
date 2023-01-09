@@ -16,74 +16,41 @@ describe('HeaderComponent', () => {
   const allCategories: ApiCategories = {
 
     categories: [
-
       {
-
         id: 1,
-
         name: 'cat1',
-
         nameEn: 'catEn1',
-
         shortDescription: null,
-
         description: null,
-
         keywords: null,
-
         key: 'cat',
-
         numberOfProducts: 2,
-
         type: 'type1',
-
         viewCategoryId: 1,
-
         subcategories: [],
-
         attachments: [],
-
         sequence: 1,
-
         oldsIds: [],
-
       },
-
       {
-
         id: 2,
-
         name: 'cat2',
-
         nameEn: 'catEn2',
-
         shortDescription: null,
-
         description: null,
-
         keywords: null,
-
         key: 'cat2',
-
         numberOfProducts: 2,
-
         type: 'type2',
-
         viewCategoryId: 2,
-
         subcategories: [],
-
         attachments: [],
-
         sequence: 2,
-
         oldsIds: [],
-
       },
-
     ],
-
   };
+
   let productServiceMock = { getCategories: () => of(allCategories) }
 
   beforeEach(() => {

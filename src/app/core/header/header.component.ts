@@ -12,7 +12,7 @@ import { ProductsService } from '../services/products/products.service';
 export class HeaderComponent implements OnInit {
   allCategories: CategoriesElements[] = [];
   showCategories: boolean = false;
-  constructor(private ProductsService: ProductsService) { }
+  constructor(private productsService: ProductsService) { }
 
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   async getAllCategories() {
-    await this.ProductsService.getCategories().subscribe({
+    await this.productsService.getCategories().subscribe({
       next: (result) => {
         this.allCategories = result;
         console.log(this.allCategories)

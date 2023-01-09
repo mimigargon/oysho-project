@@ -21,7 +21,7 @@ export class DetailComponent implements OnInit {
   productId!: string | null;
   productDetails: ProductDetails;
 
-  constructor(private router: Router, private route: ActivatedRoute, private ProductsService: ProductsService, private CartService: CartService, private store: Store<StoreState>) {
+  constructor(private router: Router, private route: ActivatedRoute, private productsService: ProductsService, private cartService: CartService, private store: Store<StoreState>) {
     this.categoryId = this.route.snapshot.paramMap.get('categoryId');
     this.productId = this.route.snapshot.paramMap.get('productId');
     this.productDetails = { id: 0, name: '', nameEn: '', image: [], longDescription: '', price: '', formattedPrice: '', color: [] }
@@ -36,7 +36,7 @@ export class DetailComponent implements OnInit {
 
 
   getDetail(categoryId: string, productId: string) {
-    this.ProductsService.getProductDetails(categoryId, productId).subscribe({
+    this.productsService.getProductDetails(categoryId, productId).subscribe({
       next: (result) => {
         this.productDetails = result;
       },

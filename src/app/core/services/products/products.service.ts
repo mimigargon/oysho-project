@@ -13,10 +13,10 @@ import { environment } from '../../../../environments/environment';
 })
 export class ProductsService {
 
-  constructor(private ApiProductsService: ApiProductsService) { }
+  constructor(private apiProductsService: ApiProductsService) { }
 
   getCategories(): Observable<CategoriesElements[]> {
-    return this.ApiProductsService.getCategories().pipe(
+    return this.apiProductsService.getCategories().pipe(
       map((ApiCategories) => {
         return ApiCategories.categories.map((category) => ({
           id: category.id,
@@ -29,7 +29,7 @@ export class ProductsService {
   }
 
   getProductsList(id: string): Observable<Products[]> {
-    return this.ApiProductsService.getList(id).pipe(
+    return this.apiProductsService.getList(id).pipe(
       map((ApiList) => {
         return ApiList.products.filter((product) => {
           return product.name !== '';
@@ -86,7 +86,7 @@ export class ProductsService {
   }
 
   getProductDetails(categoryId: string, productId: string): Observable<ProductDetails> {
-    return this.ApiProductsService.getDetails(categoryId, productId).pipe(
+    return this.apiProductsService.getDetails(categoryId, productId).pipe(
       map((ApiProducts) => ({
         id: ApiProducts.id,
         name: ApiProducts.name,
