@@ -1,35 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HeaderComponent } from './header.component';
-import { CategoriesElements } from '../services/products/models/products.interface';
 import { ProductsService } from '../services/products/products.service';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { of } from 'rxjs';
-
-const allCategories: CategoriesElements[] = [
-  {
-    id: 0,
-    name: '',
-    nameEn: '',
-    description: null
-  },
-  {
-    id: 1,
-    name: '',
-    nameEn: '',
-    description: null
-  },
-  {
-    id: 2,
-    name: '',
-    nameEn: '',
-    description: null
-  },
-]
-
-const productServiceMock = {
-  getAllCategories: () => of(allCategories)
-}
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -44,11 +18,7 @@ describe('HeaderComponent', () => {
         HeaderComponent
       ],
       providers: [
-        {
-          provide: ProductsService,
-          useValue: productServiceMock
-        }
-
+        ProductsService,
       ],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
@@ -67,9 +37,11 @@ describe('HeaderComponent', () => {
   });
 
   it('getCategories get categories from the subscription', () => {
+    const spy = jest.spyOn(TestBed.inject(ProductsService), 'getCategories');
+    const expectedCategories = [{ id: 123, name: 'Category 1', nameEn: 'Category 1', description: '' }, { id: 456, name: 'Category 2', nameEn: 'Category 2', description: '' }];
     component.getAllCategories();
-    expect(component.allCategories!.length).toBe(3);
-    expect(component.allCategories).toEqual(allCategories);
+    expect(spy).toHaveBeenCalled();
+    expect(component.allCategories).toEqual(expectedCategories)
   })
 
   it('toggle should return the opposite boolean value', () => {

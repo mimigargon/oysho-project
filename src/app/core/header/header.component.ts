@@ -10,7 +10,7 @@ import { ProductsService } from '../services/products/products.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  allCategories?: CategoriesElements[]
+  allCategories: CategoriesElements[] = [];
   showCategories: boolean = false;
   constructor(private ProductsService: ProductsService) { }
 
@@ -19,10 +19,11 @@ export class HeaderComponent implements OnInit {
     this.getAllCategories()
   }
 
-  getAllCategories() {
-    this.ProductsService.getCategories().subscribe({
+  async getAllCategories() {
+    await this.ProductsService.getCategories().subscribe({
       next: (result) => {
         this.allCategories = result;
+        console.log(this.allCategories)
       },
       error: (error) => {
         console.error(error)

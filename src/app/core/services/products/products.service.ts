@@ -4,7 +4,7 @@ import { ApiCategories, ApiList, ApiProducts } from './api/models/api-products.i
 import { Products, CategoriesElements, ImageKind, ImageSize, ImageUrlOptions, ProductDetails } from './models/products.interface';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../../environments/environment';
 
 
 
