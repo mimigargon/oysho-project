@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap } from 'rxjs';
 import { CategoriesElements, Products } from 'src/app/core/services/products/models/products.interface';
-import { ProductsService } from 'src/app/core/services/products/products.service';
+import { ProductsService } from '../../core/services/products/products.service';
 
 
 @Component({
