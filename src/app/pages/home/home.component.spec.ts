@@ -76,6 +76,7 @@ describe('HomeComponent', () => {
   it('should getCategory update the value of mumCategoryID and vacationCategoryID', () => {
     component.mumCategoryID = '1';
     component.vacationCategoryID = '2';
+    jest.spyOn(service, 'getCategories').mockReturnValue(of(allCategories));
     component.getCategory();
     expect(component.mumCategoryID).toEqual(allCategories[0].id.toString());
     expect(component.vacationCategoryID).toEqual(allCategories[1].id.toString());
