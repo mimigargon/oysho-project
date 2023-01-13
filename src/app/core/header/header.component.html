@@ -1,6 +1,10 @@
-<div class="header-container">
+<div class="header-container" data-testid="headerContainer">
   <div class="menu-container">
-    <button class="menu-container__button" (click)="showCategoriesToggle()">
+    <button
+      class="menu-container__button"
+      (click)="showCategoriesToggle()"
+      data-testid="showCategoriesBtn"
+    >
       <img
         class="button-icon"
         src="../../../assets/images/menu-icon.svg"
@@ -50,8 +54,3 @@
     </ul>
   </div>
 </div>
-
-<!-- routerLink="category/{{ category.id }}/product/{{
-  product.id
-}}/add-to-cart"
- -->

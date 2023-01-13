@@ -12,15 +12,14 @@ export class CartService {
   constructor() { }
 
 
-  setProducts(products: CartProduct[]): void {
-    let currentProduct = localStorage.getItem('cartProducts');
-    if (currentProduct) {
-      products = [...JSON.parse(currentProduct), ...products]
-    }
-    localStorage.setItem('cartProducts', JSON.stringify(products))
+  setProducts(product: CartProduct): Observable<CartProduct[]> {
+    let cartProducts: CartProduct[] = JSON.parse(localStorage.getItem('cartProducts')!) as CartProduct[] || [];
+    cartProducts = [...cartProducts, product];
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
+    return of(cartProducts);
   }
 
-  getProducts(): Observable<CartProduct> {
+  getProducts(): Observable<CartProduct[]> {
     return of(JSON.parse(localStorage.getItem('cartProducts')!))
   }
 

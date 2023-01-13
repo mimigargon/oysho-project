@@ -1,4 +1,4 @@
-<div class="detail-container">
+<div class="detail-container" data-testid="detail-container">
   <a
     class="detail-container__link"
     routerLink="/category/{{ this.categoryId }}"
@@ -25,7 +25,11 @@
     </div>
     <p class="card-description">{{ productDetails.longDescription }}</p>
     <p class="card-price">{{ productDetails.formattedPrice }}€</p>
-    <button class="btn btn-primary" (click)="addProduct(productDetails)">
+    <button
+      class="btn btn-primary"
+      (click)="addProductToCart(productDetails)"
+      data-testid="addToCartBtn"
+    >
       Añadir a la cesta
     </button>
   </div>

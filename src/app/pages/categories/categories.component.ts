@@ -13,18 +13,18 @@ import { FilterProductPipe } from '../../shared/pipes/filter-product.pipe';
 })
 export class CategoriesComponent implements OnInit {
   public productList!: Products[];
-  public categoriesID?: string | null;
+  public categoriesID: string;
   public filter: string = "";
   public sort!: string;
-  constructor(private productsService: ProductsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private productsService: ProductsService, private route: ActivatedRoute, private router: Router) {
+    this.categoriesID = this.route.snapshot.paramMap.get('categoryId') || '';
+  }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.categoriesID = params.get('categoryId');
-      if (this.categoriesID) {
-        this.getProductsList(this.categoriesID)
-      }
-    })
+    if (this.categoriesID) {
+      this.getProductsList(this.categoriesID)
+    }
+
   }
 
   getProductsList(id: string) {

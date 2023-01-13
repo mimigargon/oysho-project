@@ -1,13 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 import { CartProduct } from '../../core/services/cart/models/cart.interface';
 
-export const addProducts = createAction(
+export const addToCart = createAction(
   '[Cart] Add Products',
-  props<{ products: CartProduct }>()
-)
-
-export const addProductsSuccess = createAction(
-  '[Cart] Add Products Success',
+  props<{ product: CartProduct }>()
 )
 
 export const getProducts = createAction(
@@ -15,9 +11,9 @@ export const getProducts = createAction(
 
 )
 
-export const getProductsSuccess = createAction(
+export const setProducts = createAction(
   '[Cart] Get Products Success',
-  props<{ products: CartProduct }>()
+  props<{ products: CartProduct[] }>()
 )
 
 

@@ -2,7 +2,7 @@ import { NgModule, isDevMode } from "@angular/core";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppEffects } from "./effects/app.effects";
+import { CartEffects } from "./effects/cart.effects";
 import { appReducers } from "./reducers/app.reducers";
 import { Store } from "@ngrx/store";
 
@@ -11,7 +11,7 @@ import { Store } from "@ngrx/store";
   imports: [
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([
-      AppEffects,
+      CartEffects,
     ]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],

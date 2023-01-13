@@ -8,10 +8,14 @@ import { CategoriesElements } from 'src/app/core/services/products/models/produc
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  categories?: CategoriesElements[];
-  mumCategoryID?: string;
-  vacationCategoryID?: string;
-  constructor(private productsService: ProductsService) { }
+  categories: CategoriesElements[];
+  mumCategoryID: string;
+  vacationCategoryID: string;
+  constructor(private productsService: ProductsService) {
+    this.categories = [];
+    this.mumCategoryID = '';
+    this.vacationCategoryID = '';
+  }
 
   ngOnInit(): void {
     this.getCategory();

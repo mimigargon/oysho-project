@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { StoreState } from '../../store/states/store.state';
 import { Store } from '@ngrx/store';
-import * as cartActions from '../../store/actions/cart.actions';
+import { addToCart } from '../../store/actions/cart.actions';
 import { CartService } from '../../core/services/cart/cart.service';
 import { CartProduct } from '../../core/services/cart/models/cart.interface';
 
@@ -45,9 +45,8 @@ export class DetailComponent implements OnInit {
     })
   }
 
-  addProduct(product: CartProduct) {
-    const action = cartActions.addProducts({ products: product });
-    this.store.dispatch(action);
+  addProductToCart(product: CartProduct) {
+    this.store.dispatch(addToCart({ product }));
   }
 
 

@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HeaderComponent } from './header.component';
 import { ProductsService } from '../services/products/products.service';
@@ -9,10 +9,10 @@ import { ApiCategories } from '../services/products/api/models/api-products.inte
 
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
-  let apiService: ApiProductsService;
+  let spectator: Spectator<HeaderComponent>
   let service: ProductsService;
+  let apiService: ApiProductsService;
+
   const allCategories: ApiCategories = {
 
     categories: [
@@ -53,48 +53,50 @@ describe('HeaderComponent', () => {
 
   let productServiceMock = { getCategories: () => of(allCategories) }
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule
-      ],
-      declarations: [
-        HeaderComponent
-      ],
-      providers: [
-        ProductsService,
-        {
-          provide: ApiProductsService,
-          useValue: productServiceMock
-        }
-      ],
-      schemas: [
-        CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
-      ]
-    }).compileComponents();
-  });
+  const createComponent = createComponentFactory({
+    component: HeaderComponent,
+    imports: [
+      HttpClientTestingModule
+    ],
+    declarations: [
+      HeaderComponent
+    ],
+    providers: [
+      ProductsService,
+      {
+        provide: ApiProductsService,
+        useValue: productServiceMock
+      }
+    ],
+    schemas: [
+      CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA
+    ]
+  })
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    apiService = TestBed.inject(ApiProductsService);
-    service = TestBed.inject(ProductsService);
-    fixture.detectChanges();
+    spectator = createComponent();
+    service = spectator.inject(ProductsService);
+    apiService = spectator.inject(ApiProductsService);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(spectator.component).toBeTruthy();
   });
 
+  it('should call getAllCategories on init', () => {
+    spectator.component.ngOnInit();
+    spectator.component.getAllCategories();
+  })
+
   it('getCategories get categories from the subscription', () => {
-    component.getAllCategories();
-    expect(component.allCategories.length).toBe(2);
-    expect(component.allCategories.length).toEqual(allCategories.categories.length)
+    spectator.component.getAllCategories();
+    expect(spectator.component.allCategories.length).toBe(2);
+    expect(spectator.component.allCategories.length).toEqual(allCategories.categories.length)
   })
 
   it('toggle should return the opposite boolean value', () => {
-    const originalValue = component.showCategories;
-    component.showCategoriesToggle();
-    expect(component.showCategories).toBe(!originalValue);
+    const originalValue = spectator.component.showCategories;
+    spectator.component.showCategoriesToggle();
+    expect(spectator.component.showCategories).toBe(!originalValue);
   });
 });
